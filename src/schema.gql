@@ -1,0 +1,44 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateWorkshopInput {
+  activities: [String!]!
+  date: String!
+  description: String!
+  fees: Float!
+  host: String!
+  image: String!
+  instructors: [String!]!
+  location: String!
+  maxAttendees: Float!
+  title: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createWorkshop(data: CreateWorkshopInput!): WorkshopGQL!
+}
+
+type Query {
+  workshops: [WorkshopGQL!]!
+}
+
+type WorkshopGQL {
+  activities: [String!]!
+  createdAt: DateTime!
+  date: String!
+  description: String!
+  fees: Float!
+  host: String!
+  id: ID!
+  image: String!
+  instructors: [String!]!
+  location: String!
+  maxAttendees: Float!
+  title: String!
+}
