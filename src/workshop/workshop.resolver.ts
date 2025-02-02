@@ -19,4 +19,9 @@ export class WorkshopResolver {
   ): Promise<Workshop> {
     return this.workshopService.createWorkshop(data);
   }
+
+  @Query(() => WorkshopGQL, { nullable: true })
+  async workshop(@Args('id') id: string): Promise<Workshop | null> {
+    return this.workshopService.findWorkshopById(id);
+  }
 }

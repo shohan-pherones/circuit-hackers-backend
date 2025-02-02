@@ -16,4 +16,10 @@ export class WorkshopService {
   async findAllWorkshops(): Promise<Workshop[]> {
     return this.prisma.workshop.findMany();
   }
+
+  async findWorkshopById(id: string): Promise<Workshop | null> {
+    return this.prisma.workshop.findUnique({
+      where: { id },
+    });
+  }
 }

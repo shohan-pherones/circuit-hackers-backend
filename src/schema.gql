@@ -25,6 +25,7 @@ type Mutation {
 }
 
 type Query {
+  workshop(id: String!): WorkshopGQL
   workshops: [WorkshopGQL!]!
 }
 
