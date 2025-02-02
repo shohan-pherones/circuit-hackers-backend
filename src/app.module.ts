@@ -14,7 +14,6 @@ import { WorkshopModule } from './workshop/workshop.module';
           ? true
           : join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
-      debug: process.env.NODE_ENV !== 'production',
       playground: process.env.NODE_ENV !== 'production',
     }),
     WorkshopModule,
