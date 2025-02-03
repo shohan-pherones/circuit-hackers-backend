@@ -5,10 +5,14 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: 'Content-Type, Authorization, X-Requested-With',
-    credentials: true,
+    origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
+    allowedHeaders: [
+      'Accept',
+      'Authorization',
+      'Content-Type',
+      'X-Requested-With',
+      'apollo-require-preflight',
+    ],
   });
 
   await app.listen(process.env.PORT || 4000);
